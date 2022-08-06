@@ -12,7 +12,7 @@
     <hr>
     <div>ID : <%= data._id %></div>
     <div>name : <%= data.name %></div>
-    <div>number : <%= data.number %></div>
+    <div>age : <%= data.age %></div>
     <div>address : <%= data.address %></div>
     <hr>
     <!--input voi id để truyền lên id mà ko cho người dùng sửa
@@ -20,7 +20,7 @@
 
     <input name="id" value="<%= data._id %>" hidden>
     <div>Name : <input name="name" value=" <%= data.name %>"></div>
-    <div>Number : <input name="number" value="<%= data.number %>"></div>
+    <div>age : <input name="age" value="<%= data.age %>"></div>
     <div>Address : <input name="address" value=" <%= data.address %>"></div>
 
     <button type="submit">Update</button>

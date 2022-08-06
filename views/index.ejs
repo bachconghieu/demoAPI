@@ -9,7 +9,7 @@
 <form action="/create" method="post" enctype="application/x-www-form-urlencoded">
 
     <div>Name : <input name="name" value=" <%= data.name %>"></div>
-    <div>Number : <input name="number" value="<%= data.number %>"></div>
+    <div>age : <input name="age" value="<%= data.age %>"></div>
     <div>Address : <input name="address" value=" <%= data.address %>"></div>
 
     <button type="submit">Update</button>
@@ -21,7 +21,7 @@
     <hr>
     <div>ID : <%= data[i]._id %></div>
     <div>name : <%= data[i].name %></div>
-    <div>number : <%= data[i].number %></div>
+    <div>age : <%= data[i].age %></div>
     <div>address : <%= data[i].address %></div>
     <a href="/delete/?id=<%= data[i]._id %>">Delete</a>
     <a href="/updateForm/?id=<%= data[i]._id %>">Update</a>

@@ -16,7 +16,7 @@ mongoose.connect(uri).catch(err => console.log('co loi xay ra'));
 
 const STUDENT = mongoose.model('students', new Schema({
     name: String,
-    number: Number,
+    age: Number,
     address: String
 }))
 
@@ -28,7 +28,8 @@ router.get('/', function (req, res, next) {
     STUDENT.find({}, function (error, result) {
         if (error) throw error;
         console.log(result.length)
-        res.render('index', {title: 'Express', data: result});
+        // res.render('index', {title: 'Express', data: result});
+        res.send(result);//JSon
     })
 });
 router.get('/delete/', function (req, res) {
@@ -38,6 +39,7 @@ router.get('/delete/', function (req, res) {
         if (error) throw error;
         res.send('Xoa thanh cong!!!');
     })
+
 
 })
 
@@ -53,13 +55,13 @@ router.get('/updateForm/', function (req, res) {
 router.post('/update', async function (req, res) {
     const id = req.body.id;
     const name = req.body.name;
-    const number = req.body.number;
+    const age = req.body.age;
     const address = req.body.address;
 
 
     await STUDENT.updateOne({_id: id}, {
         name: name,
-        number: number,
+        age: age,
         address: address
     }, null)
 
@@ -69,12 +71,12 @@ router.post('/update', async function (req, res) {
 router.post('/create', async function (req, res) {
     const id = req.body.id;
     const name = req.body.name;
-    const number = req.body.number;
+    const age = req.body.age;
     const address = req.body.address;
 
     var sv = new STUDENT({
         name: name,
-        number: number,
+        age: age,
         address: address
     })
 
