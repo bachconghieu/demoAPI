@@ -22,7 +22,10 @@
     <div>ID : <%= data[i]._id %></div>
     <div>name : <%= data[i].name %></div>
     <div>age : <%= data[i].age %></div>
-    <div>address : <%= data[i].address %></div>
+    <div>address :
+<!--        <%= data[i].address %>-->
+        <img src=<%= data[i].address %> alt="" srcset="">
+    </div>
     <a href="/delete/?id=<%= data[i]._id %>">Delete</a>
     <a href="/updateForm/?id=<%= data[i]._id %>">Update</a>
 
