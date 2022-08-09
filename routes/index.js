@@ -28,8 +28,8 @@ router.get('/', function (req, res, next) {
     STUDENT.find({}, function (error, result) {
         if (error) throw error;
         console.log(result.length)
-        // res.render('index', {title: 'Express', data: result});
-        res.send(result);//JSon
+        res.render('index', {title: 'Express', data: result});
+        // res.send(result);//JSon
     })
 });
 router.get('/delete/', function (req, res) {
